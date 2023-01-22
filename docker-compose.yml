@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  react_native:
+    container_name: tamagui-sandbox
+    image: node:latest
+    build: ./dockerfile/
+    working_dir: /usr/src/app
+    volumes:
+      - ./app/:/usr/src/app
+    ports:
+      - "3000:3000"
+      - "19006:19006"
+    tty: true
